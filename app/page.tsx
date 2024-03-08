@@ -24,32 +24,35 @@ const DashboardPage = () => {
         <DashboardTabs />
          <DashboardContent />
         <div
-              style={{
-                height: 20,
-                width: "100%",
-              }}
-              ref={parentRef}
+          style={{
+            height: 200,
+            width: 300,
+            margin: "auto",
+          }}
+          ref={parentRef}
+        />
+        <Player.Root src={getSrc(vodSource)} autoPlay volume={0}>
+          <Player.Container
+            style={{
+              margin: "auto",
+              borderRadius: 5,
+              outline: "white solid 1px",
+              overflow: "hidden",
+              width: 300,
+              height: 200,
+            }}
+          >
+            <Player.Video
+              title="Agent 327"
+              style={{ height: "100%", width: "100%" }}
             />
-            <Player.Root src={getSrc(vodSource)} autoPlay volume={0}>
-              <Player.Container
-                style={{
-                  margin: 5,
-                  borderRadius: 5,
-                  outline: "white solid 1px",
-                  overflow: "hidden",
-                }}
-              >
-                <Player.Video
-                  title="Agent 327"
-                  style={{ height: "100%", width: "100%" }}
-                />
-                {isMounted && (
-                  <Player.Portal container={parentRef.current}>
-                    <Player.Time />
-                  </Player.Portal>
-                )}
-              </Player.Container>
-            </Player.Root>
+            {isMounted && (
+              <Player.Portal container={parentRef.current}>
+                <Player.Time />
+              </Player.Portal>
+            )}
+          </Player.Container>
+        </Player.Root>
           </main>
         );
       };
