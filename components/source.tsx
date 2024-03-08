@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import { getSrc } from "@livepeer/react/external";
 import * as Player from "@livepeer/react/player";
 

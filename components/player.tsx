@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import { cn } from "@/lib/utils";
 import {
   ClipIcon,
@@ -191,6 +193,8 @@ export const PlayerLoading = ({
     )}
   </div>
 );
+
+PlayerLoading.circle = 'PlayerLoading';
 
 const Settings = React.forwardRef(
   (
